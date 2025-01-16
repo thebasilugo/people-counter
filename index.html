@@ -4,27 +4,84 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<title>Counter</title>
+		<title>People Counter</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Including Semantic UI CDN for icons only -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+		/>
 	</head>
-	<body>
-		<div class="app">
-			<h1>People entered:</h1>
-			<h2 id="count-el">0</h2>
+	<body
+		class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-50 flex items-center justify-center min-h-screen transition-all text-2xl"
+	>
+		<div
+			class="relative text-center p-6 max-w-xs sm:max-w-md w-full bg-white shadow-lg rounded-lg dark:bg-gray-800 transition-all"
+		>
+			<!-- Dark Mode Toggle Button -->
+			<!-- <button
+				id="theme-toggle"
+				class="absolute top-4 right-4 bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none transition"
+			>
+				<i id="theme-icon" class="sun icon text-gray-900 dark:text-white"></i>
+			</button> -->
 
-			<button id="increment-btn">increment</button>
-			<br />
+			<h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-50 mb-2">
+				People Entered
+			</h1>
+			<h2
+				id="count-el"
+				class="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-gray-900 mb-4"
+			>
+				0
+			</h2>
 
-			<button id="decrement-btn">decrement</button>
+			<div class="space-y-2 mb-4">
+				<button
+					id="increment-btn"
+					class="w-full py-3 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none transition"
+				>
+					Increment
+				</button>
+				<button
+					id="decrement-btn"
+					class="w-full py-3 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none transition"
+				>
+					Decrement
+				</button>
+				<button
+					id="save-btn"
+					class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none transition"
+				>
+					Save
+				</button>
 
-			<br />
-			<button id="save-btn">save</button>
+				<!-- Reset and Undo buttons in a single row -->
+				<div class="flex space-x-2 mb-4">
+					<button
+						id="reset-btn"
+						class="w-1/2 py-3 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:outline-none transition"
+					>
+						Reset
+					</button>
+					<button
+						id="undo-btn"
+						class="w-1/2 py-3 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 focus:outline-none transition"
+					>
+						Undo
+					</button>
+				</div>
+			</div>
 
-			<p id="welcome-el"></p>
-			<br />
-
-			<p id="save-el">Previous Entries:&nbsp;</p>
+			<p
+				id="save-el"
+				class="text-lg sm:text-xl font-semibold text-gray-700 dark:text-gray-200"
+			>
+				Previous Entries:
+			</p>
+			<p id="welcome-el" class="text-gray-500 mt-4"></p>
 		</div>
+
+		<script src="script.js"></script>
 	</body>
-	<script src="script.js"></script>
 </html>
